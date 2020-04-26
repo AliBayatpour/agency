@@ -12,10 +12,10 @@ const App = () => {
     <React.Fragment>
       <SideMenu />
       <Switch>
-        <Route exact path="/agency" component={Home} />
-        <Route exact path="/whoweare" component={WhoWeAre} />
-        <Route exact path="/whatwehavedone" component={WhatWeHaveDone} />
-        <Route exact path="/howwework" component={HowWeWork} />
+        <Route path="/agency" component={Home} />
+        <Route path="/whoweare" component={WhoWeAre} />
+        <Route path="/whatwehavedone" component={WhatWeHaveDone} />
+        <Route path="/howwework" component={HowWeWork} />
       </Switch>
     </React.Fragment>
   );
