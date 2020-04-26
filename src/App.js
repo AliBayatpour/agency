@@ -12,7 +12,7 @@ const App = () => {
     <React.Fragment>
       <SideMenu />
       <Switch>
-        <Route path="/agency" component={Home} />
+        <Route path={process.env.PUBLIC_URL + '/'} component={Home} />
         <Route path="/whoweare" component={WhoWeAre} />
         <Route path="/whatwehavedone" component={WhatWeHaveDone} />
         <Route path="/howwework" component={HowWeWork} />
