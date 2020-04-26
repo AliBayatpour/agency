@@ -267,7 +267,7 @@ const SideMenu = ({ currentPosition, currentLocation, history }) => {
       <Logo
         className="logo"
         onClick={() => {
-          history.push("/");
+          history.push("/agency");
           setMenuState({ menuOpend: false });
         }}
         ref={myLogo}
