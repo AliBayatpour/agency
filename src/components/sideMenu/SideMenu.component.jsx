@@ -172,12 +172,14 @@ const SideMenu = ({ currentPosition, currentLocation, history }) => {
 
   // OPEN THE MENU
   const menuOpenHandler = () => {
+    clickableLineLeft.current.style.position = "absolute";
+    clickableLineRight.current.style.position = "absolute";
     if (window.matchMedia("(min-width: 1351px)").matches) {
-      gsap.to(clickableLineLeft.current, { rotate: 45, x: 3 });
-      gsap.to(clickableLineRight.current, { rotate: -45, x: -3 });
+      gsap.to(clickableLineLeft.current, { rotate: 45 });
+      gsap.to(clickableLineRight.current, { rotate: -45 });
     } else {
-      gsap.to(clickableLineLeft.current, { rotate: 45, y: 3 });
-      gsap.to(clickableLineRight.current, { rotate: -45, y: -3 });
+      gsap.to(clickableLineLeft.current, { rotate: 45 });
+      gsap.to(clickableLineRight.current, { rotate: -45 });
     }
 
     gsap.to(menuContainer.current, 0.5, {
@@ -193,12 +195,14 @@ const SideMenu = ({ currentPosition, currentLocation, history }) => {
 
   // CLOSE THE MENU
   const menuClosedHandler = () => {
+    clickableLineLeft.current.style.position = null;
+    clickableLineRight.current.style.position = null;
     if (window.matchMedia("(min-width: 1351px)").matches) {
-      gsap.to(clickableLineLeft.current, { rotate: 0, x: 0 });
-      gsap.to(clickableLineRight.current, { rotate: 0, x: 0 });
+      gsap.to(clickableLineLeft.current, { rotate: 0, margin: "2px" });
+      gsap.to(clickableLineRight.current, { rotate: 0, margin: "2px" });
     } else {
-      gsap.to(clickableLineLeft.current, { rotate: 0, y: 0 });
-      gsap.to(clickableLineRight.current, { rotate: 0, y: 0 });
+      gsap.to(clickableLineLeft.current, { rotate: 0, margin: "2px" });
+      gsap.to(clickableLineRight.current, { rotate: 0, margin: "2px" });
     }
 
     gsap.to(backdrop.current, 0.3, {
@@ -267,7 +271,7 @@ const SideMenu = ({ currentPosition, currentLocation, history }) => {
       <Logo
         className="logo"
         onClick={() => {
-          history.push(`${process.env.PUBLIC_URL + '/'}`);
+          history.push(`${process.env.PUBLIC_URL + "/"}`);
           setMenuState({ menuOpend: false });
         }}
         ref={myLogo}

@@ -63,8 +63,9 @@
   &__clickableLine {
     width: 3px;
     height: 26px;
-    background: #1a1a1a;
+    // transform-origin: center;
     margin: 2px;
+    background: #1a1a1a;
     @media (max-width: 1350px) {
       height: 3px;
       width: 26px;
